@@ -25,6 +25,10 @@ Vue.createApp({
         },
         setName:function($event){
             this.name = $event.target.value;
+        },
+        showAlert:function($event){
+            $event.preventDefault();
+            console.log($event.target.value);
         }
     }
 }).mount("#app");

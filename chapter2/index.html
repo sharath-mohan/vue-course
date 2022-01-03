@@ -9,19 +9,36 @@
     <script src="./app.js" defer></script>
   </head>
   <body>
-    <div id="app">{{message}}
-         <img v-bind:src="imgURL" alt="property binding" height="100" style="display: block;">
-         <button v-on:click="onClick">CLick me</button>
-         <p v-html="html"></p>
-         <p>Counter {{counter}}</p>
-         <button v-on:click="inc">inc</button>
-         <button v-on:click="dec">dec</button>
-         <button v-on:click="incby5(5)">inc by 5</button>
-         <div>
-             <input type="text" v-on:input="setName($event)">
-         </div>
-            <p>{{name}}</p>
+    <div id="app">
+      {{message}}
+      <img
+        v-bind:src="imgURL"
+        alt="property binding"
+        height="100"
+        style="display: block"
+      />
+      <button v-on:click="onClick">CLick me</button>
+      <p v-html="html"></p>
+      <p>Counter {{counter}}</p>
+      <button v-on:click="inc">inc</button>
+      <button v-on:click="dec">dec</button>
+      <button v-on:click="incby5(5)">inc by 5</button>
+      <div>
+        <input type="text" v-on:input="setName($event)" />
+      </div>
+      <p>{{name}}</p>
+      <div>
+        <form action="" v-on:submit="showAlert">
+          <input type="text" placeholder="name" />
+          <button>Submit</button>
+        </form>
+      </div>
+      <div>
+        <form action="" v-on:submit.prevent="onClick">
+          <input type="text" placeholder="name" />
+          <button>Submit</button>
+        </form>
+      </div>
     </div>
-   
   </body>
 </html>
